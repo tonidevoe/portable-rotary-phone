@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toni DeVoe – Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1><a href="index.html">Toni DeVoe</a></h1>
+      <p>Web Developer</p>
+    </header>
+
+    <section id="projects">
+      <div class="project-card">
+        <div class="img-wrap">
+          <img class="preview" src="revolt.png" alt="Revolt Punk Venue Template">
+        </div>
+        <a class="card-link" href="https://tonidevoe.github.io/revolt/index.html">
+          <h3>Revolt</h3>
+          <p>Responsive punk venue template built with clean HTML/CSS/JS. Fully customizable and up for sale.</p>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div class="img-wrap">
+          <img class="preview" src="sweet-tooth.png" alt="choose your own adventure game">
+        </div>
+        <a class="card-link" href="https://tonidevoe.itch.io/sweet-tooth">
+          <h3>Sweet Tooth</h3>
+          <p>A choose-your-own-adventure browser game with a retro-horror vibe.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m an alternative web developer and musician from the Midwest who specializes in strange, interactive projects.</p>
+      <p>Full-stack certification currently in progress.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Bad ideas welcome:</h2>
+      <p>
+        Email:
+        <a href="mailto:tonidvclaxton@gmail.com">tonidvclaxton@gmail.com</a>
+      </p>
+    </section>
+
+
+    <div id="lightbox" class="hidden">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+
+    <footer>
+      <a href="danger.html"><small>&copy; 2025 - Danger: do not inspect this.</small></a>
+    </footer>
+
+
+    <script>
+      const imgs = document.querySelectorAll(".preview");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      imgs.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.add("visible");
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.classList.remove("visible");
+      });
+    </script>
+  </body>
+</html>

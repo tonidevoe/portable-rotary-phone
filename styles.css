@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "Punk Kid";
+  src: url("punk-kid.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rusted";
+  src: url("rusted.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bones";
+  src: url("bones.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pinkend";
+  src: url("Pinkend.ttf") format("truetype");
+}
+
+body {
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-family: "Bones", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: #ff3c3c;
+  text-shadow: 0 0 5px #4d0000, 0 0 10px #4d0000;
+  font-family: "Rusted", sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin: 0;
+  transition: text-shadow 0.3s ease;
+}
+
+header h1:hover {
+  text-shadow: 0 0 10px #ff3c3c, 0 0 20px #ff3c3c;
+}
+
+header p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #ff3c3c;
+  text-shadow: 0 0 2px #4d0000;
+  margin-top: 0.5rem;
+  font-family: "Punk Kid", sans-serif;
+  letter-spacing: 4px;
+  transform: rotate(-3deg);
+}
+
+section#projects {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #1a1a1a;
+  border: 2px solid #ff3c3c;
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ff3c3c;
+}
+
+.img-wrap {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid #ff3c3c;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.img-wrap img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.project-card h3 {
+  color: #ff3c3c;
+  margin: 0.5rem 0;
+  font-family: "Rusted", sans-serif;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-family: "Pinkend", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.card-link {
+  display: block;
+  color: inherit;
+  padding: 0.5rem 0;
+}
+
+section#about {
+  background: #000;
+  padding: 4rem 2rem;
+}
+
+section#about h2 {
+  font-size: clamp(1.8rem, 5vw, 2rem);
+  color: #ff3c3c;
+  margin-bottom: 1rem;
+}
+
+section#about p {
+  max-width: min(90%, 600px);
+  margin: auto;
+  color: #ddd;
+  font-family: "Pinkend", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+section#contact {
+  background: #111;
+  padding: 4rem 2rem;
+}
+
+section#contact h2 {
+  color: #ff3c3c;
+  margin-bottom: 1rem;
+}
+
+section#contact p {
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+section#contact a {
+  color: #ff3c3c;
+  border-bottom: 1px dashed #ff3c3c;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+section#contact a:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border: 2px solid #ff3c3c;
+  box-shadow: 0 0 20px #ff3c3c;
+  transition: transform 0.3s ease;
+}
+
+#lightbox img:hover {
+  transform: scale(1.02);
+}
+
+#lightbox.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+}
+
+footer {
+  background: #000;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid #ff3c3c;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: #ff3c3c;
+  font-family: "Lucida Console", "Courier New", monospace;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #ff3c3c;
+}

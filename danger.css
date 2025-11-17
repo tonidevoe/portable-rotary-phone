@@ -1,0 +1,113 @@
+body {
+  background: #0c0c0c;
+  font-family: Arial, sans-serif;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  color: #fff;
+}
+
+.popup-frame {
+  width: 350px;
+  background: #e6e6e6;
+  border: 3px solid #000;
+  box-shadow: 0 0 25px #ff3c3c55;
+  animation: popup-enter 0.4s ease-out;
+}
+
+.popup-titlebar {
+  background: linear-gradient(to bottom, #000088, #000066);
+  color: #fff;
+  font-weight: bold;
+  padding: 5px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Tahoma, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.close-btn {
+  background: #c00;
+  color: #fff;
+  border: 2px solid #300;
+  padding: 0 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Tahoma, sans-serif;
+}
+
+.close-btn:hover {
+  background: #f00;
+}
+
+.popup-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.popup-content h1 {
+  color: #a00000;
+  font-size: 1.1rem;
+  font-family: "Rusted", sans-serif;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px #400000;
+}
+
+.popup-content p {
+  color: #222;
+  font-family: Tahoma, sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.popup-buttons button {
+  font-family: Tahoma, sans-serif;
+  padding: 5px 15px;
+  border: 2px solid #444;
+  background: #dcdcdc;
+  cursor: pointer;
+}
+
+.popup-buttons button:hover {
+  background: #fff;
+}
+
+.blink {
+  animation: blink 0.9s steps(2, start) infinite;
+  color: #b00000;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+@keyframes popup-enter {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #222;
+  color: #ff3c3c;
+  border: 2px solid #ff3c3c;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: #ff3c3c;
+  color: #111;
+}
